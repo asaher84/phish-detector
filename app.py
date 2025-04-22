@@ -35,8 +35,8 @@ def predict():
         y_pro_non_phishing = gbc.predict_proba(x)[0,1]
         if(y_pred ==1 ):
             y_pred = "It is {0:.2f} % safe to go ".format(y_pro_phishing*100)
-            xx =y_pred
-            name=convertion(url,int(y_pred))
+        xx =y_pred
+        name=convertion(url,int(y_pred))
         return render_template("index.html", name=name)
 @app.route('/usecases', methods=['GET', 'POST'])
 def usecases():
